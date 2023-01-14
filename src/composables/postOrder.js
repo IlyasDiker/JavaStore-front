@@ -11,10 +11,10 @@ export default (
     expiration) => {
         if(!products) return;
         const cartStore = useCartStore();
-        return ofetch(`http://localhost:8080/orders/`, {
+        return ofetch(`http://localhost:8080/invoices/`, {
             method: 'POST',
             body:{
-                products: products,
+                orders: products,
                 firstname,
                 lastname,
                 email,

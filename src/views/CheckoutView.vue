@@ -118,7 +118,10 @@ export default{
         onSubmit() {
             let products = [];
             this.cartStore.items.forEach((item)=>{
-                products.push({id: item.id});
+                products.push({
+                    product: {id: item.id},
+                    quantity: item.quantity
+                });
             })
             postOrder(
                 products,
@@ -132,11 +135,9 @@ export default{
             ).then((data)=>{
                 this.cartStore.orders.push(data.id)
                 this.cartStore.items = [];
+                this.$router.push(`/invoice/${data.id}`)
             })
         }
-    },
-    mounted(){
-        window['refs'] = this.$refs.expiration
     },
     data() {
         return {
