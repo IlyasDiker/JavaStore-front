@@ -6,7 +6,9 @@
                     <h1 class="text-3xl">Invoice Number : {{ invoice.id }}</h1>
 
                     <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-                            <OrderCard :item="invoice.product" :isShow="true"/>
+                        <template v-for="(item, index) in invoice.products" :key="index">
+                            <OrderCard :item="item" :isShow="true"/>
+                        </template>
                     </ul>
 
                     <pre>

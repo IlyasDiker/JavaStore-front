@@ -116,22 +116,21 @@ import postOrder from '../composables/postOrder';
 export default{
     methods: {
         onSubmit() {
-            let items = this.cartStore.items;
-            items.forEach((item)=>{
-                postOrder(
-                    item.id,
-                    this.FormData.firstname,
-                    this.FormData.lastname,
-                    this.FormData.email,
-                    this.FormData.phone,
-                    this.FormData.card_number,
-                    this.FormData.security_code,
-                this.FormData.expiration,
-                ).then((data)=>{
-                    this.cartStore.orders.push(data.id)
-                })
+            let products = [];
+            this.cartStore.items.forEach((item)=>{
+                products.push({id: item.id});
             })
-            setTimeout(()=>{
+            postOrder(
+                products,
+                this.FormData.firstname,
+                this.FormData.lastname,
+                this.FormData.email,
+                this.FormData.phone,
+                this.FormData.card_number,
+                this.FormData.security_code,
+                this.FormData.expiration,
+            ).then((data)=>{
+                this.cartStore.orders.push(data.id)
                 this.cartStore.items = [];
             })
         }
