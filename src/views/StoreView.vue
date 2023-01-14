@@ -17,7 +17,7 @@
                             </a>
                             <div class="mt-4">
                                 <h2 class="text-gray-900 title-font text-lg font-medium">{{ item.name }}</h2>
-                                <p class="mt-1">{{ item.price }} MAD</p>
+                                <p class="mt-1">{{ item.price.toLocaleString() }} MAD</p>
                             </div>
                         </RouterLink>
                     </template>
