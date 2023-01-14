@@ -31,7 +31,7 @@
                         class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light"
                         required>
                     <template v-if="FormData.picture.file && FormData.picture.preview">
-                        <img :src="FormData.picture.preview">
+                        <img :src="FormData.picture.preview" class="mt-2 border-2 rounded-md aspect-video object-cover">
                     </template>
                 </div>
                 <div class="flex items-start mb-6">
@@ -70,6 +70,9 @@ export default{
     },
     methods:{
         onSubmit(event){
+
+            let formData = new this.FormData(event.srcElement)
+
             if(!this.FormData.picture.base64) return;
 
             postProduct(
@@ -77,7 +80,7 @@ export default{
                 this.FormData.price,
                 this.FormData.picture.base64
                 ).then((res)=>{
-                    console.log('success', res);
+                    this.$router.push(`/product/${res.id}`)
                 })
 
         },

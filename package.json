@@ -10,7 +10,9 @@
   "dependencies": {
     "ofetch": "^1.0.0",
     "pinia": "^2.0.28",
+    "pinia-plugin-persistedstate": "^3.0.2",
     "sass": "^1.57.1",
+    "uuid": "^9.0.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },

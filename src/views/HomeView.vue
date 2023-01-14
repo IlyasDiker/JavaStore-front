@@ -7,7 +7,7 @@
         <span class="text-base">Explore our</span>
         <h1 class="text-4xl font-semibold mb-5">Watch Collection</h1>
         <div class="flex flex-row">
-          <RouterLink to="/shop" type="button" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200/50 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Shop Now</RouterLink>
+          <RouterLink to="/store" type="button" class="text-gray-900 bg-white focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200/50 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">Shop Now</RouterLink>
         </div>
       </div>
      </div>

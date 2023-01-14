@@ -2,7 +2,7 @@
 
     <main class="text-gray-600 body-font">
         <div class="container px-4 py-16 mx-auto">
-            <div class="flex flex-wrap">
+            <div class="grid grid-cols-4 gap-3">
                 <template v-if="!products">
                     <div class="bg-gray-100 rounded-xl w-full text-gray-700 p-4" role="alert">
                       <p class="font-bold">Loading ...</p>
@@ -10,7 +10,7 @@
                 </template>
                 <template v-else>
                     <template v-for="(item, index) in products" :key="index">
-                        <RouterLink :to="{name:'product', params:{id:item.id}}" class="lg:w-1/4 md:w-1/2 w-full">
+                        <RouterLink :to="{name:'product', params:{id:item.id}}" class="lg:col-span-1 md:col-span-2 col-span-4">
                             <a class="block relative aspect-square rounded overflow-hidden">
                                 <img class="object-cover object-center w-full h-full flex"
                                 :src="item.picture">
